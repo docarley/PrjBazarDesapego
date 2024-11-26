@@ -1,0 +1,25 @@
+Tela Login 
+  - Login
+  - Senha
+  
+Tela Doacao
+ - Produto
+ - Quantidade
+ - Doador (busca por ID)
+ (atualizar tabela Produto - quantidade)
+ (atualizar tabela Usuario - coin)
+
+Tela Troca 
+ - Produto
+ - Quantidade 
+ - Doador (busca por chapa?) 
+ (atualizar tabela Produto - quantidade)
+ (atualizar tabela Usuario - coin)
+
+Tela Relatórios
+
+- Quantidade de Produtos doados
+- Quantidade de Produtos comprados
+- Quantidade de Produtos não comprados
+- Top 3 que mais doou (por unidade)
+  
