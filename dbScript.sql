@@ -1,3 +1,5 @@
+SET FOREIGN_KEY_CHECKS=OFF;
+
 CREATE TABLE Usuario (
 idUsuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 registro VARCHAR(10) UNIQUE NOT NULL, 
@@ -8,10 +10,10 @@ perfil CHAR(5) CHECK (perfil='ADMIN' OR perfil='COLAB' OR perfil='COMUM')
 );
 
 CREATE TABLE Doacao (
-idDoacao INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+idDoacao INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 idUsuario INT NOT NULL,
 dataHora DATETIME NOT NULL,
-CONSTRAINT fk_DoacaoUsuario FOREIGN KEY(idUsuario) REFERENCES idUsuario(Usuario)
+CONSTRAINT fk_Doacao_Usuario FOREIGN KEY(idUsuario) REFERENCES idUsuario(Usuario)
 );
 
 CREATE TABLE Compra (
@@ -46,14 +48,14 @@ idCompra INT(10) NOT NULL,
 idProduto INT(10) NOT NULL, 
 quantidade INT(10) NOT NULL,
 totalEmCoinItem INT(10) NOT NULL,
-CONSTRAINT pk_CompraProduto PRIMARY KEY (idCompra, idProduto)
+CONSTRAINT pk_CompraProduto PRIMARY KEY (idCompra, idProduto),
 CONSTRAINT fk_CompraProduto_Compra FOREIGN KEY (idCompra)
 REFERENCES idCompra(Compra),
 CONSTRAINT fk_CompraProduto_Produto FOREIGN KEY (idProduto)
 REFERENCES idProduto(Produto)
 );
 
-
+SET FOREIGN_KEY_CHECKS=ON;
 
 
 
